@@ -3,17 +3,10 @@
 
 module.exports = function towelSort(matrix) {
     
-    let arr = []
     if (!matrix) return [];
     if (matrix === []) return [];
 
-    for (let i = 0; i < matrix.length; i++) {
-
-        if (i % 2 == 0) {
-            arr = arr.concat(matrix[i])
-        } else {
-            arr = arr.concat(matrix[i].reverse())
-        }
-    }
-    return arr;
+    matrix = matrix.reduce((arr, item, index) =>index%2==0 ? arr.concat(item) : arr.concat(item.reverse()), [])
+    
+    return matrix;
 }
