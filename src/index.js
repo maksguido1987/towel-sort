@@ -6,7 +6,6 @@ module.exports = function towelSort(matrix) {
     if (!matrix) return [];
     if (matrix === []) return [];
 
-    matrix = matrix.reduce((arr, item, index) =>index%2==0 ? arr.concat(item) : arr.concat(item.reverse()), [])
-    
-    return matrix;
+    return matrix.reduce((arr, item, index) => arr.concat(index%2==0 ? item : item.reverse()), [])
+
 }
